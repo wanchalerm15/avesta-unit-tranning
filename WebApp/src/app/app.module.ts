@@ -9,6 +9,7 @@ import { CreateComponent } from './components/create/create.component';
 import { LayoutComponent } from './layout/layout.component';
 import { UpdateComponent } from './components/update/update.component';
 import { DeleteComponent } from './components/delete/delete.component';
+import { AppRouting } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,7 @@ import { DeleteComponent } from './components/delete/delete.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'create', component: CreateComponent },
-      { path: 'read', component: ReadComponent },
-      { path: 'update/:id', component: UpdateComponent },
-      { path: 'delete/:id', component: DeleteComponent }
-    ])
+    RouterModule.forRoot(AppRouting)
   ],
   providers: [],
   bootstrap: [AppComponent]
