@@ -9,5 +9,9 @@ namespace WebDomain.Abstract
 {
     public interface IMember
     {
+        IEnumerable<Member> Items { get; }
+        void Create(Member value);
+        void Update(int id, Member value);
+        void Delete(int id);
     }
 }
