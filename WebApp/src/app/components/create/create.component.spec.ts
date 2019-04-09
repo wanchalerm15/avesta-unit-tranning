@@ -28,6 +28,12 @@ describe('CreateComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should header title equal "CREATE"', () => {
+    const element = fixture.debugElement.nativeElement as HTMLElement;
+    const header = element.querySelector('.card-header span');
+    expect(header.textContent).toContain('CREATE');
+  });
+
   it('should create FormGroup', () => {
     const fakeForm = new FormGroup({
       firstname: new FormControl(''),

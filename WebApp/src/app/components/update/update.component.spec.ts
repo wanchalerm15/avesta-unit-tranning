@@ -35,6 +35,12 @@ describe('UpdateComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should header title equal "UPDATE"', () => {
+    const element = fixture.debugElement.nativeElement as HTMLElement;
+    const header = element.querySelector('.card-header span');
+    expect(header.textContent).toContain('UPDATE');
+  });
+
   it('should update FormGroup', () => {
     const fakeForm = new FormGroup({
       firstname: new FormControl('Firstname 2'),

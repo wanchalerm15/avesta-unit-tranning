@@ -28,6 +28,12 @@ describe('ReadComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should header title equal "READ"', () => {
+    const element = fixture.debugElement.nativeElement as HTMLElement;
+    const header = element.querySelector('.card-header span');
+    expect(header.textContent).toContain('READ');
+  });
+
   it('should have Items property', () => {
     expect(component.items.length).toEqual(3);
   });

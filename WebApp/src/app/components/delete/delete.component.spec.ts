@@ -36,6 +36,12 @@ describe('DeleteComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should header title equal "DELETE"', () => {
+    const element = fixture.debugElement.nativeElement as HTMLElement;
+    const header = element.querySelector('.card-header span');
+    expect(header.textContent).toContain('DELETE');
+  });
+
   it('should check route params', (done) => {
     expect(component.id).toEqual(testingId);
     crudService.ItemById(testingId).subscribe(item => {
