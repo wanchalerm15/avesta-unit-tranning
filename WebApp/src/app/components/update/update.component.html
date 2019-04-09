@@ -1,0 +1,32 @@
+<app-layout>
+  <h3 header>
+    <span>UPDATE</span>
+    <a routerLink="/read" class="btn btn-dark btn-sm float-right">Go back</a>
+  </h3>
+
+  <form [formGroup]="form" (submit)="onSubmit()" class="mx-auto" style="width: 40%" body>
+    <div class="form-group">
+      <label for="">Firstname :</label>
+      <input type="text" class="form-control" formControlName="firstname">
+    </div>
+
+    <div class="form-group">
+      <label for="">Lastname :</label>
+      <input type="text" class="form-control" formControlName="lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="">Old :</label>
+      <input type="text" class="form-control" formControlName="old">
+    </div>
+
+    <div class="alert alert-danger" [hidden]="!errorMessage">{{ errorMessage }}</div>
+
+    <div class="form-group">
+      <input type="submit" *ngIf="!loading; else loadingTemp" value="Update member" class="btn btn-warning btn-block">
+      <ng-template #loadingTemp>
+        <input type="button" value="Loading..." class="btn btn-warning btn-block" disabled="disabled">
+      </ng-template>
+    </div>
+  </form>
+</app-layout>

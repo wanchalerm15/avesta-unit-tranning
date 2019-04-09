@@ -1,0 +1,69 @@
+<app-layout>
+  <h3 header>
+    <span>DELETE</span>
+    <a routerLink="/read" class="btn btn-dark btn-sm float-right">Go back</a>
+  </h3>
+
+  <div *ngIf="item" body>
+    <h4 class="card-title">Delete item!</h4>
+    <p class="card-text">Are you sure you want to delete "{{ item.Id }}" right?</p>
+
+    <hr>
+
+    <div class="form-group">
+      <table>
+        <tr>
+          <th>Id :</th>
+          <td>{{ item.Id }}</td>
+        </tr>
+
+        <tr>
+          <th>FIrstname :</th>
+          <td>{{ item.Firstname }}</td>
+        </tr>
+
+        <tr>
+          <th>Lastname :</th>
+          <td>{{ item.Lastname }}</td>
+        </tr>
+
+        <tr>
+          <th>Old :</th>
+          <td>{{ item.Old }} Years old</td>
+        </tr>
+
+        <tr>
+          <th>Created :</th>
+          <td>{{ item.Created | date : 'medium' }}</td>
+        </tr>
+
+        <tr>
+          <th>Updated :</th>
+          <td>{{ item.Updated | date : 'medium' }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr>
+
+    <div class="card-text">
+      <div class="alert alert-danger" [hidden]="!errorMessage">{{ errorMessage }}</div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <button *ngIf="!loading; else loadingTemp" class="btn btn-primary btn-block" (click)="onDelete()">
+            Yes Delete Now
+          </button>
+          <ng-template #loadingTemp>
+            <button disabled="disabled" class="btn btn-primary btn-block" (click)="onDelete()">
+              Loading...
+            </button>
+          </ng-template>
+        </div>
+        <div class="col-sm-2">
+          <a routerLink="/read" class="btn btn-danger btn-block">No Go Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-layout>

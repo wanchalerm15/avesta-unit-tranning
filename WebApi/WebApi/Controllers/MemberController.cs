@@ -24,7 +24,7 @@ namespace WebApi.Controllers
 
         public Member Get(int id)
         {
-            return _Member.Items.FirstOrDefault(m => m.Id == id);
+            return _Member.Items.Single(m => m.Id == id);
         }
 
         public IHttpActionResult Post([FromBody] Member value)
