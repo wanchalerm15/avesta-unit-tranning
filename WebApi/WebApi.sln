@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{95BAC9D3-15EE-4D9F-A251-B15F282F2895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "WebApi.Tests\WebApi.Tests.csproj", "{9462E536-EA3E-4AEC-9093-7F26EEB53608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDomain", "WebDomain\WebDomain.csproj", "{F354D1B3-5A2F-4B5B-979B-950E30A01ECD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95BAC9D3-15EE-4D9F-A251-B15F282F2895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95BAC9D3-15EE-4D9F-A251-B15F282F2895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95BAC9D3-15EE-4D9F-A251-B15F282F2895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95BAC9D3-15EE-4D9F-A251-B15F282F2895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9462E536-EA3E-4AEC-9093-7F26EEB53608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9462E536-EA3E-4AEC-9093-7F26EEB53608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9462E536-EA3E-4AEC-9093-7F26EEB53608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9462E536-EA3E-4AEC-9093-7F26EEB53608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F354D1B3-5A2F-4B5B-979B-950E30A01ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F354D1B3-5A2F-4B5B-979B-950E30A01ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F354D1B3-5A2F-4B5B-979B-950E30A01ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F354D1B3-5A2F-4B5B-979B-950E30A01ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3DC3995-191C-42DD-A1D1-475BFA5C9AE7}
+	EndGlobalSection
+EndGlobal
