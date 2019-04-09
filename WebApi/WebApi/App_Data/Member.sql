@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Member] (
-    [Id]        INT           NOT NULL,
+    [Id]        INT           IDENTITY (1, 1) NOT NULL,
     [Firstname] NVARCHAR (50) NOT NULL,
     [Lastname]  NVARCHAR (50) NOT NULL,
     [Old]       INT           NOT NULL,

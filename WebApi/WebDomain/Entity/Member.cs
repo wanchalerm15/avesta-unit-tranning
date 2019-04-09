@@ -9,7 +9,7 @@ namespace WebDomain.Entity
     [Table("Member")]
     public partial class Member
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int Id { get; set; }
 
         [Required]
