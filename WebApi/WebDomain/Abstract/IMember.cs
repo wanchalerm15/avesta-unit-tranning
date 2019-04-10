@@ -9,5 +9,6 @@ namespace WebDomain.Abstract
 {
     public interface IMember
     {
+        IEnumerable<Member> Items { get; }
     }
 }

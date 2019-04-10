@@ -11,5 +11,7 @@ namespace WebDomain.Concrete
     public class EFMember : IMember
     {
         private readonly Entity.Entity entity = new Entity.Entity();
+
+        public IEnumerable<Member> Items => entity.Members;
     }
 }

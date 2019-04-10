@@ -16,5 +16,15 @@ namespace WebApi.Controllers
         {
             this._Member = _Member;
         }
+
+        public IEnumerable<Member> Get()
+        {
+            return _Member.Items;
+        }
+
+        public Member Get(int id)
+        {
+            return _Member.Items.SingleOrDefault(m => m.Id == id);
+        }
     }
 }
