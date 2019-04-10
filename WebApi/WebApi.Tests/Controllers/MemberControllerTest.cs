@@ -71,7 +71,9 @@ namespace WebApi.Tests.Controllers
             var result = controller.Post(value);
 
             Assert.AreEqual(4, controller.Get().Count());
-            Assert.AreEqual(value.Firstname, controller.Get(4).Firstname);
+            Assert.AreEqual("Add First", controller.Get(4).Firstname);
+            Assert.AreEqual("Add Last", controller.Get(4).Lastname);
+            Assert.AreEqual(400, controller.Get(4).Old);
         }
 
         [TestMethod]
