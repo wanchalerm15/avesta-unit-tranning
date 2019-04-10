@@ -2,6 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReadComponent } from './read.component';
 import { TestingModule } from 'src/app/testings/testing.module';
+import { CRUDService } from 'src/app/services/crud.service';
+import { of, Observable } from 'rxjs';
+import { ICRUD } from 'src/app/abstracts/ICRUD.interface';
+import { TestingCRUDService } from 'src/app/testings/testing-crudservice';
 
 describe('ReadComponent', () => {
   let component: ReadComponent;
@@ -9,7 +13,10 @@ describe('ReadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule(TestingModule({
-      declarations: [ReadComponent]
+      declarations: [ReadComponent],
+      providers: [
+        { provide: CRUDService, useClass: TestingCRUDService }
+      ]
     })).compileComponents();
   }));
 
@@ -21,5 +28,10 @@ describe('ReadComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create "Item" and check member of "Items"', () => {
+    expect(component.items).toBeTruthy();
+    expect(component.items.length).toBe(3);
   });
 });

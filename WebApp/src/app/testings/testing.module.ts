@@ -11,10 +11,18 @@ export function TestingModule(params: NgModule): NgModule {
             ...params.declarations || []
         ],
         imports: [
-            RouterTestingModule,
+            RouterTestingModule.withRoutes([
+                { path: 'create', component: LayoutComponent },
+                { path: 'read', component: LayoutComponent },
+                { path: 'update/:id', component: LayoutComponent },
+                { path: 'delete/:id', component: LayoutComponent }
+            ]),
             HttpClientTestingModule,
             FormsModule,
             ReactiveFormsModule
+        ],
+        providers: [
+            ...params.providers || []
         ]
     };
 }
