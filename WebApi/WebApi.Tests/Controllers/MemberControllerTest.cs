@@ -79,13 +79,46 @@ namespace WebApi.Tests.Controllers
         [TestMethod]
         public void Put()
         {
+            var mock = new Mock<IMember>();
+            mock.Setup(m => m.Items).Returns(FakeMember);
+            mock.Setup(m => m.Update(It.IsAny<int>(), It.IsAny<Member>())).Callback((int id, Member member) =>
+            {
+                var updateModel = FakeMember.Single(m => m.Id == id);
+                updateModel.Firstname = member.Firstname;
+                updateModel.Lastname = member.Lastname;
+                updateModel.Old = member.Old;
+                updateModel.Updated = DateTime.Now;
+            });
 
+            var controller = new MemberController(mock.Object);
+            var value = new Member
+            {
+                Firstname = "Update Firstname",
+                Lastname = "Update Lastname",
+                Old = 400
+            };
+
+            controller.Put(3, value);
+            Assert.AreEqual("Update Firstname", controller.Get(3).Firstname);
+            Assert.AreEqual("Update Lastname", controller.Get(3).Lastname);
+            Assert.AreEqual(400, controller.Get(3).Old);
         }
 
         [TestMethod]
         public void Delete()
         {
+            var mock = new Mock<IMember>();
+            mock.Setup(m => m.Items).Returns(FakeMember);
+            mock.Setup(m => m.Delete(It.IsAny<int>())).Callback((int id) =>
+            {
+                var deleteModel = FakeMember.Single(m => m.Id == id);
+                FakeMember.Remove(deleteModel);
+            });
 
+            var controller = new MemberController(mock.Object);
+            controller.Delete(3);
+
+            Assert.AreEqual(2, controller.Get().Count());
         }
 
     }
